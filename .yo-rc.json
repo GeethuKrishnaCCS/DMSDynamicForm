@@ -1,0 +1,21 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "14.20.0",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.9.1"
+    },
+    "version": "1.17.3",
+    "libraryName": "dms-dynamic-form",
+    "libraryId": "37b03e15-c579-40c5-b712-b2894d65d866",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "dms-dynamic-form",
+    "solutionShortDescription": "dms-dynamic-form description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

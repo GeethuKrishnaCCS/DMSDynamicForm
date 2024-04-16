@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "dms-dynamic-form-client-side-solution",
+    "id": "37b03e15-c579-40c5-b712-b2894d65d866",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.17.3"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "dms-dynamic-form description"
+      },
+      "longDescription": {
+        "default": "dms-dynamic-form description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "dms-dynamic-form Feature",
+        "description": "The feature that activates elements of the dms-dynamic-form solution.",
+        "id": "fdee068d-a88b-4582-9a6b-68aebe729023",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/dms-dynamic-form.sppkg"
+  }
+}
