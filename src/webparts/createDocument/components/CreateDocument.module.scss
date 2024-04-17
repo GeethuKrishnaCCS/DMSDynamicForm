@@ -2,33 +2,71 @@
 
 .createDocument {
   overflow: hidden;
-  padding: 1em;
   color: "[theme:bodyText, default: #323130]";
   color: var(--bodyText);
+  border-radius: 30px;
+  box-shadow: 4px 0 50px rgba($color: #000000, $alpha: 0.1);
+
   &.teams {
     font-family: $ms-font-family-fallbacks;
   }
-}
-
-.welcome {
-  text-align: center;
-}
-
-.welcomeImage {
-  width: 100%;
-  max-width: 420px;
-}
-
-.links {
-  a {
-    text-decoration: none;
-    color: "[theme:link, default:#03787c]";
-    color: var(--link); // note: CSS Custom Properties support is limited to modern browsers only
-
-    &:hover {
-      text-decoration: underline;
-      color: "[theme:linkHovered, default: #014446]";
-      color: var(--linkHovered); // note: CSS Custom Properties support is limited to modern browsers only
+  .border {
+    .documenttitle {
+      background: #323338;
+      color: white;
+      padding: 29px 0;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      font-family: "Roboto", sans-serif;
     }
+    .formsection {
+      padding: 2.5rem;
+      .cmnlabel {
+        color: #323338;
+        .required {
+          color: #ed1c24;
+        }
+      }
+      .subtext {
+        font-size: 20px;
+        font-weight: bold;
+        color: #12171d;
+        margin-bottom: 20px;
+        margin-top: 0;
+      }
+    }
+  }
+  .divrow {
+    width: 100%;
+    display: flex;
+    padding: 0.5em;
+  }
+  .wdthrgt {
+    width: 50%;
+    font-Weight: "600";
+    margin-top: "6px";
+    height: "20px"
+
+  }
+  .wdthlft {
+    width: 50%;
+    margin-left: 5px;
+    font-Weight: "600";
+    margin-Left: "2px";
+    margin-Right: "10px";
+    height: "20px";
+    font-family: sans-serif;
+  }
+  .rgtalign {
+    width: 100%;
+    text-align: right;
+  }
+  .btn {
+    margin-top: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    margin-bottom: 5px;
   }
 }

@@ -9,6 +9,7 @@ import "@pnp/sp/items";
 import "@pnp/sp/batching";
 import "@pnp/sp/files";
 import "@pnp/sp/folders";
+import "@pnp/sp/content-types";
 
 let _sp: SPFI = null;
 

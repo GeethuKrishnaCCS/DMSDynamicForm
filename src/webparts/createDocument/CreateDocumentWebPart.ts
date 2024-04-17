@@ -12,24 +12,22 @@ import * as strings from 'CreateDocumentWebPartStrings';
 import CreateDocument from './components/CreateDocument';
 import { ICreateDocumentProps } from './interfaces/ICreateDocumentProps';
 
-export interface ICreateDocumentWebPartProps {
-  description: string;
-}
 
-export default class CreateDocumentWebPart extends BaseClientSideWebPart<ICreateDocumentWebPartProps> {
 
-  private _isDarkTheme: boolean = false;
-  private _environmentMessage: string = '';
+export default class CreateDocumentWebPart extends BaseClientSideWebPart<ICreateDocumentProps> {
 
+ 
   public render(): void {
     const element: React.ReactElement<ICreateDocumentProps> = React.createElement(
       CreateDocument,
       {
-        description: this.properties.description,
-        isDarkTheme: this._isDarkTheme,
-        environmentMessage: this._environmentMessage,
-        hasTeamsContext: !!this.context.sdks.microsoftTeams,
-        userDisplayName: this.context.pageContext.user.displayName
+        context: this.context,
+        siteUrl: this.context.pageContext.web.serverRelativeUrl,
+        webpartHeader: this.properties.webpartHeader,
+        department:this.properties.department,
+        category:this.properties.category,
+        sourceDocument:this.properties.sourceDocument
+       
       }
     );
 
@@ -38,7 +36,7 @@ export default class CreateDocumentWebPart extends BaseClientSideWebPart<ICreate
 
   protected onInit(): Promise<void> {
     return this._getEnvironmentMessage().then(message => {
-      this._environmentMessage = message;
+      // this._environmentMessage = message;
     });
   }
 
@@ -75,7 +73,7 @@ export default class CreateDocumentWebPart extends BaseClientSideWebPart<ICreate
       return;
     }
 
-    this._isDarkTheme = !!currentTheme.isInverted;
+    // this._isDarkTheme = !!currentTheme.isInverted;
     const {
       semanticColors
     } = currentTheme;
@@ -107,8 +105,17 @@ export default class CreateDocumentWebPart extends BaseClientSideWebPart<ICreate
             {
               groupName: strings.BasicGroupName,
               groupFields: [
-                PropertyPaneTextField('description', {
-                  label: strings.DescriptionFieldLabel
+                PropertyPaneTextField('webpartHeader', {
+                  label: "webpartHeader"
+                }),
+                PropertyPaneTextField('department',{
+                  label: "department"
+                }),
+                PropertyPaneTextField('category',{
+                  label: "category"
+                }),
+                PropertyPaneTextField('sourceDocument',{
+                  label: "sourceDocument"
                 })
               ]
             }

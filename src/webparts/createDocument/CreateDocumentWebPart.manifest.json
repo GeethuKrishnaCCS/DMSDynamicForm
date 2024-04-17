@@ -22,7 +22,9 @@
     "description": { "default": "CreateDocument description" },
     "officeFabricIconFontName": "Page",
     "properties": {
-      "description": "CreateDocument"
+      "webpartHeader": "Create Document",
+      "department":"Department",
+      "category":"Category"
     }
   }]
 }
