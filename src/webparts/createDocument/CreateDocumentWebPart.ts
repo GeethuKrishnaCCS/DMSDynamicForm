@@ -23,10 +23,14 @@ export default class CreateDocumentWebPart extends BaseClientSideWebPart<ICreate
       {
         context: this.context,
         siteUrl: this.context.pageContext.web.serverRelativeUrl,
-        webpartHeader: this.properties.webpartHeader,
+        absolutesiteUrl: this.context.pageContext.web.absoluteUrl,
+       webpartHeader: this.properties.webpartHeader,
         department:this.properties.department,
         category:this.properties.category,
-        sourceDocument:this.properties.sourceDocument
+        documentIdSettings:this.properties.documentIdSettings,
+        documentIdSequenceSettings: this.properties.documentIdSequenceSettings,
+        sourceDocument:this.properties.sourceDocument,
+        publishDocument:this.properties.publishDocument
        
       }
     );
@@ -114,8 +118,18 @@ export default class CreateDocumentWebPart extends BaseClientSideWebPart<ICreate
                 PropertyPaneTextField('category',{
                   label: "category"
                 }),
+                PropertyPaneTextField('documentIdSettings',{
+                  label: "documentIdSettings"
+                }),
+                PropertyPaneTextField('documentIdSequenceSettings',{
+                  label: "documentIdSequenceSettings"
+                }),
+                
                 PropertyPaneTextField('sourceDocument',{
                   label: "sourceDocument"
+                }),
+                PropertyPaneTextField('publishDocument',{
+                  label: "publishDocument"
                 })
               ]
             }

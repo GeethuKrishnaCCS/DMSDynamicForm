@@ -58,4 +58,16 @@ export class BaseService {
     public EnsureUser(username: string) {
         return this.sp.web.ensureUser(username);
     }
+    public createNewLibraryItem(url: string, listname: string, data: any): Promise<any> {
+        return this.sp.web.getList(url + "/" + listname).items.add(data);
+    }
+    public createNewListItem(url: string, listname: string, data: any): Promise<any> {
+        return this.sp.web.getList(url + "/Lists/" + listname).items.add(data);
+    }
+    public async uploadDocument(filename: string, filedata: any, libraryname: string): Promise<any> {
+        const file = await this.sp.web.getFolderByServerRelativePath(libraryname)
+            .files.addUsingPath(filename, filedata, { Overwrite: true });
+            console.log('file: ', file);
+        return file;
+    }
 } 
